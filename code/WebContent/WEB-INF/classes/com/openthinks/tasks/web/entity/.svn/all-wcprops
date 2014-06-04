@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/web/entity
+END
+TaskGroupUserRelation.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/web/entity/TaskGroupUserRelation.class
+END
+TaskGroup.class
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/web/entity/TaskGroup.class
+END
+TaskContents.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/web/entity/TaskContents.class
+END
+Users.class
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/web/entity/Users.class
+END
+Tasks.class
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/web/entity/Tasks.class
+END

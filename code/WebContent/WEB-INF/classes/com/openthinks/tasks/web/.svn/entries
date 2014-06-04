@@ -1,0 +1,83 @@
+10
+
+dir
+21
+https://open-thinks.svn.cloudforge.com/openthinks/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/web
+https://open-thinks.svn.cloudforge.com/openthinks
+
+
+
+2014-06-04T05:47:39.412163Z
+21
+dailey_dai
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19157fce-975f-4590-bc1d-cccacd28b323
+
+service
+dir
+
+utils
+dir
+
+controller
+dir
+
+dao
+dir
+
+bean
+dir
+
+filter
+dir
+
+OpenTaskWebConfigure.class
+file
+
+
+
+
+2014-06-03T09:08:37.667593Z
+9576c14b9dcf64bc7669ba2c05292014
+2014-06-04T05:47:39.412163Z
+21
+dailey_dai
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2472
+
+entity
+dir
+

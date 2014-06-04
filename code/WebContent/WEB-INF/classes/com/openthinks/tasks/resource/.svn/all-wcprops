@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/resource
+END
+dbconfig.properties
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/resource/dbconfig.properties
+END
+ResourceManagement.class
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/resource/ResourceManagement.class
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/resource/log4j.properties
+END

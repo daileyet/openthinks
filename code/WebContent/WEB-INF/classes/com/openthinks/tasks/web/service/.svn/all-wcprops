@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/web/service
+END
+TaskContentService.class
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/web/service/TaskContentService.class
+END
+UserService.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/web/service/UserService.class
+END
+TaskGroupService.class
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/web/service/TaskGroupService.class
+END
+TaskService.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/web/service/TaskService.class
+END
+ServicesUtils.class
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/openthinks/!svn/ver/21/branches/v2/openthinks/WebContent/WEB-INF/classes/com/openthinks/tasks/web/service/ServicesUtils.class
+END
