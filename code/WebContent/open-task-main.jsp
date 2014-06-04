@@ -177,13 +177,17 @@
 							</a>
 						</div>
 						<div class="btn-group">
-							<a class="btn btn-default" data-role="insertUnorderedList"
+							<a class="btn btn-default" data-role="insertunorderedlist"
 								href="#"> <i class="icon-list-ul"></i>
-							</a> <a class="btn btn-default" data-role="insertOrderedList"
+							</a> <a class="btn btn-default" data-role="insertorderedlist"
 								href="#"> <i class="icon-list-ol"></i>
 							</a>
 						</div>
 						<div class="btn-group">
+						
+						<a class="btn btn-default" data-role="removeFormat" href="#" title="Clean">
+								<i class="icon-eraser"></i>
+							</a>
 							<a class="btn btn-default" data-role="formatBlock h1" href="#">
 								h<sup>1</sup>
 							</a> <a class="btn btn-default" data-role="formatBlock h2" href="#">
@@ -285,19 +289,15 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script
 		src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		
-		<script
+	<script
+		src="${pageContext.request.contextPath}/static/js/plugin/jquery.hotkeys.js"></script>
+
+	<script
 		src="${pageContext.request.contextPath}/static/js/plugin/bootstrap-wysiwyg.js"></script>
-		
-		<!-- <script
+
+	<script
 		src="${pageContext.request.contextPath}/static/js/plugin/open-todo.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/static/js/controller/TodoCtrl.js"></script> -->
-		
-		<script>
-			
-			$("#editor").wysiwyg();
-			
-		</script>
+		src="${pageContext.request.contextPath}/static/js/controller/TodoCtrl.js"></script>
 </body>
 </html>

@@ -47,27 +47,30 @@ TODO_PLUGIN.prototype.switchSourceOrEditModel=function() {//switch source or edi
 };
 TODO_PLUGIN.prototype.bindToolBar = function() {
 	var plugin = this, dfs = this.editor.defaults, toolbarBtnSelector = 'a[data-'
-			+ dfs.commandRole
+			+ dfs.internalCommand.role
 			+ '],button[data-'
-			+ dfs.commandRole
-			+ '],input[type=button][data-' + dfs.commandRole + ']', toolbarExternalBtnSelector = 'a[data-'
-			+ dfs.externalCommandRole
+			+ dfs.internalCommand.role
+			+ '],input[type=button][data-' + dfs.internalCommand.role + ']', toolbarExternalBtnSelector = 'a[data-'
+			+ dfs.externalCommand.role
 			+ '],button[data-'
-			+ dfs.externalCommandRole
+			+ dfs.externalCommand.role
 			+ '],input[type=button][data-'
-			+ dfs.externalCommandRole + ']';
-	dfs.$toolbar.find(toolbarBtnSelector).click(function() {
-		// $(this).data(dfs.commandRole)
-		plugin.editor.handler($(this).data(dfs.commandRole));
-	});
-
-	dfs.$toolbar.find(toolbarExternalBtnSelector).click(function() {
-		// $(this).data(dfs.externalCommandRole)
-		var cmdTrigger=$(this),commandWithArgs=cmdTrigger.data(dfs.externalCommandRole),
-		commandArr = commandWithArgs.split(' '), 
-		command = commandArr.shift(); 
-		//args = commandArr.join(' ') ;
-		plugin.externalCommand(command).handler.apply(cmdTrigger,commandArr);
-	});
+			+ dfs.externalCommand.role + ']';
+	if (dfs.internalCommand.enable){
+		dfs.$toolbar.find(toolbarBtnSelector).click(function() {
+			// $(this).data(dfs.commandRole)
+			plugin.editor.handler($(this).data(dfs.internalCommand.role));
+		});
+	}
+	if(dfs.externalCommand.enable){
+		dfs.$toolbar.find(toolbarExternalBtnSelector).click(function() {
+			// $(this).data(dfs.externalCommandRole)
+			var cmdTrigger=$(this),commandWithArgs=cmdTrigger.data(dfs.externalCommand.role),
+			commandArr = commandWithArgs.split(' '), 
+			command = commandArr.shift(); 
+			//args = commandArr.join(' ') ;
+			plugin.externalCommand(command).handler.apply(cmdTrigger,commandArr);
+		});
+	}
 
 };

@@ -1,4 +1,8 @@
-
+/**
+ * Todo editor controller
+ * @author open-thinks@outlook.com
+ * @see open-todo.js
+ */
 (function() {
 	var plugin = new TODO_PLUGIN();
 	plugin.editor.defaults = {
@@ -6,17 +10,30 @@
 		$editor : $('#editor'),
 		$source : $('#editor-source'),
 		switchSelector : "ul[class~='nav'] a",
-		commandRole : 'role',
-		externalCommandRole : 'role-customer'
-	}, 
-	plugin.editor.externalhandlers = [{
-		key:'save',
-		handler:function(a,b){
+		internalCommand : {
+			role : 'role',
+			enable : false
+		},
+		externalCommand : {
+			role : 'role-customer',
+			enable : true
+		}
+	}//initial context defaults options
+	, plugin.editor.defaults.$editor.wysiwyg({
+		toolbarSelector : '#editControls',
+		commandRole : plugin.editor.defaults.internalCommand.role
+	})//initial bootstrap-wysiwyg plug-in. @see http://www.bootcss.com/p/bootstrap-wysiwyg/
+	, plugin.editor.externalhandlers = [ {//
+		key : 'save',
+		handler : function(a, b) {
 			alert($(this).data(plugin.editor.defaults.externalCommandRole));
 		}
-	}],
-	
-	plugin.bindToolBar(), plugin
-			.switchSourceOrEditModel();
+	}, {//
+
+	}
+
+	],
+
+	plugin.bindToolBar(), plugin.switchSourceOrEditModel();
 
 })();
