@@ -3,8 +3,8 @@
  * @author open-thinks@outlook.com
  * @see open-todo.js
  */
-(function() {
-	var plugin = new TODO_PLUGIN();
+(function(task) {
+	var plugin = new TODO_PLUGIN(task);
 	plugin.editor.defaults = {
 		$toolbar : $('#editControls'),
 		$editor : $('#editor'),
@@ -25,15 +25,36 @@
 	})//initial bootstrap-wysiwyg plug-in. @see http://www.bootcss.com/p/bootstrap-wysiwyg/
 	, plugin.editor.externalhandlers = [ {//
 		key : 'save',
-		handler : function(a, b) {
-			alert($(this).data(plugin.editor.defaults.externalCommandRole));
+		handler : function() {
+			//alert($(this).data(plugin.editor.defaults.externalCommandRole));
+			//task.subject='a new task subject';
+			console.log(task);
+			alert(task);
 		}
 	}, {//
-
+		key : 'delete',
+		handler:function(){
+			
+		}
+	},{
+		key : 'assignGroup',
+		handler:function(){
+			
+		}
+	},{
+		key : 'unlock',
+		handler:function(){
+			
+		}
+	},{
+		key : 'lock',
+		handler:function(){
+			
+		}
 	}
 
 	],
 
 	plugin.bindToolBar(), plugin.switchSourceOrEditModel();
 
-})();
+})(currentTask);

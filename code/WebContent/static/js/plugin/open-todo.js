@@ -2,7 +2,7 @@
  * instance of whole task lister and editor
  * @since 5/29/2014
  */
-function TODO_PLUGIN(){
+function TODO_PLUGIN(task){
 	this.lister = {};
 	this.editor = {
 		defaults : {},
@@ -13,6 +13,7 @@ function TODO_PLUGIN(){
 		},
 		externalhandlers : [],
 	};
+	this.currentTask=task || {id:'',subject:'',content:''} ;
 };
 /**
  * @param cmdhandler
@@ -44,6 +45,13 @@ TODO_PLUGIN.prototype.switchSourceOrEditModel=function() {//switch source or edi
 			}
 		});
 	});
+};
+
+TODO_PLUGIN.prototype.updateUI=function(){
+	//TODO
+};
+TODO_PLUGIN.prototype.updateModel=function(){
+	//TODO
 };
 TODO_PLUGIN.prototype.bindToolBar = function() {
 	var plugin = this, dfs = this.editor.defaults, toolbarBtnSelector = 'a[data-'

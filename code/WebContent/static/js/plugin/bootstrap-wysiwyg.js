@@ -160,7 +160,7 @@
 		}
 		bindToolbar($(options.toolbarSelector), options);
 		editor.attr('contenteditable', true)
-			.on('mouseup keyup mouseout', function () {
+			.on('mouseup keyup blur', function () {
 				saveSelection();
 				updateToolbar();
 			});

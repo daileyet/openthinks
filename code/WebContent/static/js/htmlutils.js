@@ -3,6 +3,11 @@ function v(obj) {
     else return "";
 }
 
+function wv(obj) {
+    if (obj) return escape(obj);
+    else return "";
+}
+
 String.prototype.trim = function() {
     return this.replace(/(^\s*)|(\s*$)/g, "");
 };

@@ -20,6 +20,10 @@
 <link
 	href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
 	rel="stylesheet">
+	
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/static/css/openthinks.common.css">
+	
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/openthinks.task.main.css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -136,7 +140,7 @@
 					<div class="btn-toolbar" id="editControls" role="toolbar"
 						data-role="editor-toolbar">
 						<div class="btn-group">
-							<a class="btn btn-default" data-role-customer="save 1 2" href="#">
+							<a class="btn btn-default" data-role-customer="save" href="#">
 								<i class="icon-save"></i>
 							</a> <a class="btn btn-default" data-role-customer="delete" href="#">
 								<i class="icon-remove"></i>
@@ -177,9 +181,9 @@
 							</a>
 						</div>
 						<div class="btn-group">
-							<a class="btn btn-default" data-role="insertunorderedlist"
+							<a class="btn btn-default" data-role1="insertunorderedlist"
 								href="#"> <i class="icon-list-ul"></i>
-							</a> <a class="btn btn-default" data-role="insertorderedlist"
+							</a> <a class="btn btn-default" data-role1="insertorderedlist"
 								href="#"> <i class="icon-list-ol"></i>
 							</a>
 						</div>
@@ -215,14 +219,15 @@
 						</div>
 
 					</div>
-					<div class="panel panel-default">
+					<div class="panel panel-default" id="editContent">
 						<div class="panel-heading">
-							<span id="task-subject" type="text" class="form-control"
-								placeholder="Subject" contenteditable="true"></span>
+							<input id="task-subject" type="text" class="form-control"
+								placeholder="Subject"  data-key="subject"/>
+							<input type="hidden"  data-key="id" class="flag-hiden"/>
 						</div>
 						<!-- Editor -->
 						<div class="panel-body">
-							<div id="editor" contenteditable="true"></div>
+							<div id="editor" contenteditable="true" data-key="content"></div>
 							<div id="editor-source" style="display: none"
 								contenteditable="true"></div>
 						</div>
@@ -241,7 +246,7 @@
 			</div>
 			<!--Right Editor End-->
 		</div>
-
+		
 	</div>
 
 
@@ -284,6 +289,10 @@
 		<!-- /.modal-dialog -->
 	</div>
 
+
+
+
+
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -291,10 +300,14 @@
 		src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/static/js/plugin/jquery.hotkeys.js"></script>
-
 	<script
 		src="${pageContext.request.contextPath}/static/js/plugin/bootstrap-wysiwyg.js"></script>
-
+	<script
+		src="${pageContext.request.contextPath}/static/js/plugin/DataBind.js"></script>
+	<script>
+		var currentTask={id:'${task.id}',subject:'${task.subject}',content:'${task.content.content}'};
+		DataBind.bind($("#editContent"),currentTask);
+	</script>
 	<script
 		src="${pageContext.request.contextPath}/static/js/plugin/open-todo.js"></script>
 	<script

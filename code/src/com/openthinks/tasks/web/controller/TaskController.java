@@ -103,8 +103,8 @@ public class TaskController {
 						isGroupOwner.toString(), WebScope.REQUEST);
 			}
 		}
-		return "task_edit.jsp";
-		// return "WEB-INF/jsp/edit.jsp";
+		//return "task_edit.jsp";
+		 return "open-task-main.jsp";
 	}
 
 	@SuppressWarnings("rawtypes")
