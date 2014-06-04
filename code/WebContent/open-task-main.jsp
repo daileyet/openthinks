@@ -216,11 +216,13 @@
 							<span id="task-subject" type="text" class="form-control"
 								placeholder="Subject" contenteditable="true"></span>
 						</div>
+						<!-- Editor -->
 						<div class="panel-body">
 							<div id="editor" contenteditable="true"></div>
 							<div id="editor-source" style="display: none"
 								contenteditable="true"></div>
 						</div>
+						<!-- -->
 						<div class="panel-footer">
 
 							<ul class="nav nav-pills">
@@ -283,9 +285,19 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script
 		src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		
 		<script
+		src="${pageContext.request.contextPath}/static/js/plugin/bootstrap-wysiwyg.js"></script>
+		
+		<!-- <script
 		src="${pageContext.request.contextPath}/static/js/plugin/open-todo.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/static/js/controller/TodoCtrl.js"></script>
+		src="${pageContext.request.contextPath}/static/js/controller/TodoCtrl.js"></script> -->
+		
+		<script>
+			
+			$("#editor").wysiwyg();
+			
+		</script>
 </body>
 </html>
