@@ -103,6 +103,8 @@ public class TaskController {
 						isGroupOwner.toString(), WebScope.REQUEST);
 			}
 		}
+		List<Tasks> tasks = getCurrentUserTask(webAttributes);
+		webAttributes.addAttribute("tasks", tasks, WebScope.REQUEST);
 		//return "task_edit.jsp";
 		 return "open-task-main.jsp";
 	}
@@ -170,7 +172,7 @@ public class TaskController {
 		String id = (String) webAttributes.get("id");
 		String subject = (String) webAttributes.get("subject");
 		String content = (String) // WebUtils.decode(
-		webAttributes.get("content.content");
+		webAttributes.get("content");
 		// );
 
 		if (subject == null || "".equals(subject.trim())) {

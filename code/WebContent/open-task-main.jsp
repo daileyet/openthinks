@@ -14,16 +14,17 @@
 <title>My To Do</title>
 <jsp:include page="static/page/common-head.jsp" />
 <!-- Bootstrap -->
+<!-- 
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"> -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 <link
 	href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
 	rel="stylesheet">
-	
+
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/openthinks.common.css">
-	
+-->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/openthinks.task.main.css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -115,7 +116,7 @@
 												href="#collapse_${task.id}"> <span name="action-expand"
 													class="icon-expand"></span>
 											</a> <span class="icon-lock"></span> <span class="icon-unlock"></span>
-											</span> <a name="action-edit" href="#" class="pull-right"><span
+											</span> <a name="action-edit" href="${pageContext.request.contextPath}/task/edit.htm?id=${task.id}" class="pull-right"><span
 												name="task-subject">${task.subject}</span></a> <span
 												class="clearfix"></span>
 										</h4>
@@ -223,11 +224,11 @@
 						<div class="panel-heading">
 							<input id="task-subject" type="text" class="form-control"
 								placeholder="Subject"  data-key="subject"/>
-							<input type="hidden"  data-key="id" class="flag-hiden"/>
+							<input id="task-id" type="hidden"  data-key="id" class="flag-hiden"/>
 						</div>
 						<!-- Editor -->
 						<div class="panel-body">
-							<div id="editor" contenteditable="true" data-key="content"></div>
+							<div id="editor" data-key="content" contenteditable="true"></div>
 							<div id="editor-source" style="display: none"
 								contenteditable="true"></div>
 						</div>
@@ -305,12 +306,21 @@
 	<script
 		src="${pageContext.request.contextPath}/static/js/plugin/DataBind.js"></script>
 	<script>
-		var currentTask={id:'${task.id}',subject:'${task.subject}',content:'${task.content.content}'};
-		DataBind.bind($("#editContent"),currentTask);
+		//constant and model objects
+		
+		var openContext = {
+			CONTEXT_PATH : '${pageContext.request.contextPath}',
+			task : {
+				id : decodeURIComponent('${task.id}'),
+				subject : decodeURIComponent('${task.subject}'),
+				content : decodeURIComponent('${task.content.content}'),
+				isLock : '${task.lock}'
+			}
+		};
 	</script>
 	<script
 		src="${pageContext.request.contextPath}/static/js/plugin/open-todo.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/static/js/controller/TodoCtrl.js"></script>
+		src="${pageContext.request.contextPath}/static/js/controller/TodoCtrlR.js"></script>
 </body>
 </html>
