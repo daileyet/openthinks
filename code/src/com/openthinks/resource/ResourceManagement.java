@@ -1,9 +1,10 @@
 /**
  * 
  */
-package com.openthinks.tasks.resource;
+package com.openthinks.resource;
 
 import java.io.InputStream;
+
 
 /**
  * @author minjdai

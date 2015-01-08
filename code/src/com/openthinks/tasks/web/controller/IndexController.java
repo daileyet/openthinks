@@ -3,7 +3,6 @@
  */
 package com.openthinks.tasks.web.controller;
 
-import org.apache.log4j.Logger;
 
 import com.openthinks.easyweb.annotation.Controller;
 import com.openthinks.easyweb.annotation.Mapping;
@@ -23,7 +22,6 @@ import com.openthinks.tasks.web.service.UserService;
 public class IndexController {
 
 	UserService userService = WebContexts.get().lookup(UserService.class);
-	Logger logger = Logger.getLogger(getClass());
 
 	@Mapping("/index")
 	public String index() {
@@ -38,7 +36,6 @@ public class IndexController {
 	public String login(WebAttributers attributers) {
 		String name = (String) attributers.get("username");
 		String pass = (String) attributers.get("password");
-		logger.debug("login info:name=" + name + ", password=" + pass);
 		Users users = userService.find(name, pass);
 		OperationJson json = OperationJson.build();
 		if (users == null) {

@@ -5,8 +5,6 @@ package com.openthinks.tasks.web.service;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import sql.dhibernate.Session;
 import sql.dhibernate.support.SessionFactory;
 import sql.lang.Condition;
@@ -19,7 +17,6 @@ import com.openthinks.tasks.web.entity.Users;
  */
 public class UserService {
 
-	Logger logger = Logger.getLogger(getClass());
 
 	public void add(Users user) {
 		Session session = SessionFactory.getSession();

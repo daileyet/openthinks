@@ -1,7 +1,7 @@
 <%@ page import="com.openthinks.tasks.web.bean.AuthorizedUser"%>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" >
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/static/css/font-awesome_3.2.1.css" rel="stylesheet">
 <%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/openthinks.task.main.css"> --%>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/openthinks.common.css">

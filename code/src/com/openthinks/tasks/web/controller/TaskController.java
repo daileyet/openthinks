@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
-
 import com.openthinks.easyweb.annotation.Controller;
 import com.openthinks.easyweb.annotation.Mapping;
 import com.openthinks.easyweb.annotation.ResponseReturn;
@@ -23,7 +21,6 @@ import com.openthinks.tasks.web.utils.TaskUtils;
 
 @Controller("/task")
 public class TaskController {
-	Logger logger = Logger.getLogger(TaskController.class);
 	TaskService taskService = WebContexts.get().lookup(TaskService.class);
 	TaskContentService contentService = WebContexts.get().lookup(
 			TaskContentService.class);
@@ -218,7 +215,6 @@ public class TaskController {
 			contents.setContent(content);
 			tasks.setContent(contents);
 			taskService.add(tasks);
-			logger.debug("Create Task[" + tasks.getId() + "]");
 		}
 		webAttributes.addAttribute("task", tasks, WebScope.REQUEST);
 		return "task_edit.jsp";

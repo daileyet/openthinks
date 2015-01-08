@@ -2,7 +2,6 @@ package com.openthinks.tasks.web.controller;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
 
 import com.openthinks.easyweb.annotation.Controller;
 import com.openthinks.easyweb.annotation.Mapping;
@@ -17,7 +16,6 @@ import com.openthinks.tasks.web.utils.TaskUtils;
 @Controller("/task/group")
 public class TaskGroupController {
 
-	Logger logger = Logger.getLogger(TaskGroupController.class);
 	TaskGroupService taskGroupService = WebContexts.get().lookup(
 			TaskGroupService.class);
 

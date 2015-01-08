@@ -12,7 +12,7 @@ import sql.lang.Condition;
 import sql.lang.Configurator;
 import sql.lang.ConfiguratorFactory;
 
-import com.openthinks.tasks.resource.ResourceManagement;
+import com.openthinks.resource.ResourceManagement;
 import com.openthinks.tasks.web.entity.TaskGroup;
 import com.openthinks.tasks.web.entity.TaskGroupUserRelation;
 import com.openthinks.tasks.web.entity.Users;
