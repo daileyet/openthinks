@@ -13,7 +13,7 @@ import com.openthinks.tasks.web.utils.TasksGroupIdGenerator;
 import com.openthinks.tasks.web.utils.TasksIdGenerator;
 
 @EasyConfigure
-@ScanPackages({ "com.openthinks.tasks.web" })
+@ScanPackages({ "com.openthinks.tasks.web","com.openthinks.transfer.web" })
 @RequestSuffixs(".do,.htm,.html")
 public class OpenThinkWebConfigure implements Bootstrap {
 
