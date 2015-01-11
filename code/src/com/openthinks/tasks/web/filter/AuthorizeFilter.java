@@ -15,7 +15,6 @@ import com.openthinks.easyweb.context.WebContexts;
 import com.openthinks.easyweb.context.handler.WebAttributers;
 import com.openthinks.easyweb.context.handler.WebAttributers.WebScope;
 import com.openthinks.tasks.web.bean.AuthorizedUser;
-import com.openthinks.tasks.web.entity.Users;
 
 /**
  * Servlet Filter implementation class AuthorFilter
@@ -54,18 +53,18 @@ public class AuthorizeFilter implements Filter {
 				(HttpServletRequest) request, (HttpServletResponse) response);
 		
 		// ///////////////////////////////////////
-		 Users users = new Users();
-		 users.setId("1");
-		 users.setUserName("dailey");
-		 users.setUserPassword("1234");
+//		 Users users = new Users();
+//		 users.setId("1");
+//		 users.setUserName("dailey");
+//		 users.setUserPassword("1234");
 
 		// users.setId("2");
 		// users.setUserName("jack");
 		// users.setUserPassword("123456");
 
-		 AuthorizedUser authorizedUser = new AuthorizedUser(users, "Y");
-		 webAttributers.storeSession(AuthorizedUser.AUTHORIZED_USER_ID,
-		 authorizedUser);
+//		 AuthorizedUser authorizedUser = new AuthorizedUser(users, "Y");
+//		 webAttributers.storeSession(AuthorizedUser.AUTHORIZED_USER_ID,
+//		 authorizedUser);
 		// ////////////////////////////////////////
 
 		AuthorizedUser user = (AuthorizedUser) webAttributers.getAttribute(
@@ -102,7 +101,8 @@ public class AuthorizeFilter implements Filter {
 				}
 
 			} else {
-				if (requestURI.indexOf(pattern) > 0) {
+				//fix bug exclude path
+				if (requestURI.indexOf(pattern) >= 0 ) {
 					return true;
 				}
 			}

@@ -9,7 +9,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry combineaccessrules="false" kind="src" path="/Common"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/EasyWebFramework"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Sae&amp;Jetty"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
