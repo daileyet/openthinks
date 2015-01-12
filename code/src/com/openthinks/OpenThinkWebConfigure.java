@@ -14,22 +14,25 @@ import com.openthinks.tasks.web.utils.TasksIdGenerator;
 import com.sina.sae.util.SaeUserInfo;
 
 @EasyConfigure
-@ScanPackages({ "com.openthinks.tasks.web","com.openthinks.transfer.web" })
+@ScanPackages({ "com.openthinks.tasks.web", "com.openthinks.transfer.web" })
 @RequestSuffixs(".do,.htm,.html")
 public class OpenThinkWebConfigure implements Bootstrap {
 
 	private void initialSessionFactory() {
 		Configurator configuration = ConfiguratorFactory
 				.getInstance(ResourceManagement.getDbResource());
-		 configuration
-		 .setUrl("jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_openthinks?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=gbk");
-		 String accessKey = SaeUserInfo.getAccessKey();// "m34k5553x4"
-		 String secretKey = SaeUserInfo.getSecretKey();//hmi1x23i141lji5kmxm5yy5w15345zxw152zk30h
-		
-		 configuration.setUserName(accessKey);
-		 configuration.setUserPwd(secretKey);
-
+		useSaeEnv(configuration);
 		SessionFactory.setDefaultConfigurator(configuration);
+	}
+
+	private void useSaeEnv(Configurator configuration) {
+		configuration
+				.setUrl("jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_openthinks?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=gbk");
+		String accessKey = SaeUserInfo.getAccessKey();// "m34k5553x4"
+		String secretKey = SaeUserInfo.getSecretKey();// hmi1x23i141lji5kmxm5yy5w15345zxw152zk30h
+
+		configuration.setUserName(accessKey);
+		configuration.setUserPwd(secretKey);
 	}
 
 	private void initialGenerator() throws ClassNotFoundException {

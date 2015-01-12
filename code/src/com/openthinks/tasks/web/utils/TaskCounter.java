@@ -3,6 +3,7 @@ package com.openthinks.tasks.web.utils;
 import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -22,11 +23,11 @@ public final class TaskCounter {
 
 	final Lock lock;
 	final Map<String, AtomicInteger> dateCountMap;
+	final AtomicBoolean taskCounterReady = new AtomicBoolean(false);
 
 	public TaskCounter() {
 		lock = new ReentrantLock();
 		dateCountMap = new ConcurrentHashMap<String, AtomicInteger>();
-		initial();
 	}
 
 	private void initial() {
@@ -52,6 +53,7 @@ public final class TaskCounter {
 	}
 
 	public Integer count(String dateStr) {
+		prepared();
 		AtomicInteger atomic = dateCountMap.get(dateStr);
 		if (atomic != null) {
 			return atomic.get();
@@ -60,6 +62,7 @@ public final class TaskCounter {
 	}
 
 	public Integer createNext(String dateStr) {
+		prepared();
 		lock.lock();
 		try {
 			AtomicInteger atomic = dateCountMap.get(dateStr);
@@ -68,6 +71,18 @@ public final class TaskCounter {
 				dateCountMap.put(dateStr, atomic);
 			}
 			return atomic.addAndGet(1);
+		} finally {
+			lock.unlock();
+		}
+	}
+	
+	private void prepared() {
+		lock.lock();
+		try {
+			if (taskCounterReady.get() == false) {
+				initial();
+				taskCounterReady.set(true);
+			}
 		} finally {
 			lock.unlock();
 		}

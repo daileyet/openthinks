@@ -8,7 +8,7 @@ import com.openthinks.easyweb.annotation.ResponseReturn;
 import com.openthinks.easyweb.context.handler.WebAttributers;
 import com.openthinks.transfer.Transfer;
 import com.openthinks.transfer.TransferData;
-import com.openthinks.transfer.httpclient.SaeTransfer;
+import com.openthinks.transfer.httpclient.HttpClientTransfer;
 import com.openthinks.transfer.util.CharUtil;
 
 
@@ -28,11 +28,11 @@ public class TransferController {
 			e.printStackTrace();
 		}
 		Transfer transfer = 
-				//new HttpClientTransfer(); 
-		new SaeTransfer();
+				new HttpClientTransfer(); 
+//		transfer = new SaeTransfer();
 		
 		TransferData data= TransferData.init(transferURL);
-//				.setProxyHost("cn-proxy.jp.oracle.com");
+//		data.setProxyHost("cn-proxy.jp.oracle.com");
 		transfer.request(data);
 		return callbackMethod + "(" +data.getResponseContent()+")";
 	}
