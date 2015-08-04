@@ -1,4 +1,5 @@
-# openthinks.task
+# todos 
+
 A java web project for to do list
 
 > use [easywebframework][1] as MVC framework
