@@ -3,12 +3,12 @@
  */
 package com.openthinks.tasks.web.controller;
 
+import openthinks.easyweb.annotation.Controller;
+import openthinks.easyweb.annotation.Mapping;
+import openthinks.easyweb.annotation.ResponseReturn;
+import openthinks.easyweb.context.WebContexts;
+import openthinks.easyweb.context.handler.WebAttributers;
 
-import com.openthinks.easyweb.annotation.Controller;
-import com.openthinks.easyweb.annotation.Mapping;
-import com.openthinks.easyweb.annotation.ResponseReturn;
-import com.openthinks.easyweb.context.WebContexts;
-import com.openthinks.easyweb.context.handler.WebAttributers;
 import com.openthinks.tasks.web.bean.AuthorizedUser;
 import com.openthinks.tasks.web.bean.json.OperationJson;
 import com.openthinks.tasks.web.entity.Users;
@@ -45,8 +45,7 @@ public class IndexController {
 			json.error("User name or password not match.");
 		} else {
 			AuthorizedUser authorizedUser = AuthorizedUser.authorized(users);
-			attributers.storeSession(AuthorizedUser.AUTHORIZED_USER_ID,
-					authorizedUser);
+			attributers.storeSession(AuthorizedUser.AUTHORIZED_USER_ID, authorizedUser);
 			json.sucess();
 		}
 		// return WebContexts.get().lookup(TaskController.class)
@@ -66,13 +65,13 @@ public class IndexController {
 			json.error("User name or Email cannot be empty.");
 			return json.toString();
 		}
-		
+
 		if (pass == null || "".equals(pass.trim())) {
 			json.error("Password cannot be empty.");
 			return json.toString();
 		}
-		
-		if (pass == null || "".equals(pass.trim())|| !pass.equals(pass2)) {
+
+		if (pass == null || "".equals(pass.trim()) || !pass.equals(pass2)) {
 			json.error("Two entered passwords are not matched.");
 			return json.toString();
 		}

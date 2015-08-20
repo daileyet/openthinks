@@ -15,7 +15,7 @@
 	</welcome-file-list>
 	<servlet>
 		<servlet-name>easyweb</servlet-name>
-		<servlet-class>com.openthinks.easyweb.EasyWebDispatcher</servlet-class>
+		<servlet-class>openthinks.easyweb.EasyWebDispatcher</servlet-class>
 		<load-on-startup>1</load-on-startup>
 
 	</servlet>
@@ -29,14 +29,14 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>monitor</servlet-name>
-		<servlet-class>com.openthinks.easyweb.monitor.WebProcessMonitor</servlet-class>
+		<servlet-class>openthinks.easyweb.monitor.WebProcessMonitor</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>monitor</servlet-name>
 		<url-pattern>/monitor/*</url-pattern>
 	</servlet-mapping>
 	<listener>
-		<listener-class>com.openthinks.easyweb.context.WebContextLoadListener</listener-class>
+		<listener-class>openthinks.easyweb.context.WebContextLoadListener</listener-class>
 	</listener>
 	<context-param>
 		<param-name>configureClassName</param-name>

@@ -2,9 +2,9 @@ package com.openthinks.tasks.web.service;
 
 import java.util.List;
 
-import sql.dhibernate.Session;
-import sql.dhibernate.support.SessionFactory;
-import sql.lang.Condition;
+import openthinks.libs.sql.dhibernate.Session;
+import openthinks.libs.sql.dhibernate.support.SessionFactory;
+import openthinks.libs.sql.lang.Condition;
 
 import com.openthinks.tasks.web.entity.TaskContents;
 import com.openthinks.tasks.web.entity.Tasks;
@@ -31,8 +31,7 @@ public class TaskService {
 
 	public List<Tasks> getGroupTasks(String groupId) {
 		Session session = SessionFactory.getSession();
-		List<Tasks> ret = session.list(Tasks.class, Condition
-				.build(Tasks.class).getSqlPart() + " where TaskGroupID=?",
+		List<Tasks> ret = session.list(Tasks.class, Condition.build(Tasks.class).getSqlPart() + " where TaskGroupID=?",
 				new String[] { groupId });
 		return ret;
 	}
@@ -70,8 +69,7 @@ public class TaskService {
 				+ " select tg.ID from users u left join tasks_group_user tgu on u.ID=tgu.UserID "
 				+ " left join tasks_group tg on tgu.TaskGroupID=tg.ID where u.ID=?) "
 				+ " union select * from tasks where UID=?";
-		return session
-				.list(Tasks.class, query, new String[] { userId, userId });
+		return session.list(Tasks.class, query, new String[] { userId, userId });
 
 	}
 }

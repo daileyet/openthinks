@@ -1,9 +1,9 @@
 package com.openthinks.tasks.web.controller;
 
-import com.openthinks.easyweb.annotation.Controller;
-import com.openthinks.easyweb.annotation.Mapping;
-import com.openthinks.easyweb.context.WebContexts;
-import com.openthinks.easyweb.context.handler.WebAttributers;
+import openthinks.easyweb.annotation.Controller;
+import openthinks.easyweb.annotation.Mapping;
+import openthinks.easyweb.context.WebContexts;
+import openthinks.easyweb.context.handler.WebAttributers;
 
 @Controller("/setting")
 public class SettingController {
@@ -11,8 +11,7 @@ public class SettingController {
 	@Mapping("/index")
 	public String index(WebAttributers webAttributers) {
 
-		WebContexts.get().lookup(TaskGroupController.class)
-				.listCurrentUserGroup(webAttributers);
+		WebContexts.get().lookup(TaskGroupController.class).listCurrentUserGroup(webAttributers);
 
 		return "setting.jsp";
 	}

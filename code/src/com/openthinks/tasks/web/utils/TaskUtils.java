@@ -1,7 +1,8 @@
 package com.openthinks.tasks.web.utils;
 
-import com.openthinks.easyweb.context.handler.WebAttributers;
-import com.openthinks.easyweb.context.handler.WebAttributers.WebScope;
+import openthinks.easyweb.context.handler.WebAttributers;
+import openthinks.easyweb.context.handler.WebAttributers.WebScope;
+
 import com.openthinks.tasks.web.bean.AuthorizedUser;
 import com.openthinks.tasks.web.entity.Users;
 
@@ -14,9 +15,8 @@ import com.openthinks.tasks.web.entity.Users;
 public class TaskUtils {
 
 	public static Users sessionUser(WebAttributers webAttributes) {
-		AuthorizedUser autnorizedUser = (AuthorizedUser) webAttributes
-				.getAttribute(AuthorizedUser.AUTHORIZED_USER_ID,
-						WebScope.SESSION);
+		AuthorizedUser autnorizedUser = (AuthorizedUser) webAttributes.getAttribute(AuthorizedUser.AUTHORIZED_USER_ID,
+				WebScope.SESSION);
 		return autnorizedUser.getUser();
 	}
 

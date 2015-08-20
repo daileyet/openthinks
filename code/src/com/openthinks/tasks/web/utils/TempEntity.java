@@ -1,6 +1,6 @@
 package com.openthinks.tasks.web.utils;
 
-import sql.entity.Entity;
+import openthinks.libs.sql.entity.Entity;
 
 public class TempEntity extends Entity {
 	String taskCount;

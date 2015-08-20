@@ -1,13 +1,13 @@
 package com.openthinks;
 
-import sql.dhibernate.support.SessionFactory;
-import sql.lang.Configurator;
-import sql.lang.ConfiguratorFactory;
+import openthinks.easyweb.annotation.configure.EasyConfigure;
+import openthinks.easyweb.annotation.configure.RequestSuffixs;
+import openthinks.easyweb.annotation.configure.ScanPackages;
+import openthinks.easyweb.context.Bootstrap;
+import openthinks.libs.sql.dhibernate.support.SessionFactory;
+import openthinks.libs.sql.lang.Configurator;
+import openthinks.libs.sql.lang.ConfiguratorFactory;
 
-import com.openthinks.easyweb.annotation.configure.EasyConfigure;
-import com.openthinks.easyweb.annotation.configure.RequestSuffixs;
-import com.openthinks.easyweb.annotation.configure.ScanPackages;
-import com.openthinks.easyweb.context.Bootstrap;
 import com.openthinks.resource.ResourceManagement;
 import com.openthinks.tasks.web.utils.TasksGroupIdGenerator;
 import com.openthinks.tasks.web.utils.TasksIdGenerator;
@@ -19,12 +19,12 @@ import com.sina.sae.util.SaeUserInfo;
 public class OpenThinkWebConfigure implements Bootstrap {
 
 	private void initialSessionFactory() {
-		Configurator configuration = ConfiguratorFactory
-				.getInstance(ResourceManagement.getDbResource());
-		useSaeEnv(configuration);
+		Configurator configuration = ConfiguratorFactory.getInstance(ResourceManagement.getDbResource());
+		//		useSaeEnv(configuration);
 		SessionFactory.setDefaultConfigurator(configuration);
 	}
 
+	@SuppressWarnings("unused")
 	private void useSaeEnv(Configurator configuration) {
 		configuration
 				.setUrl("jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_openthinks?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=gbk");
@@ -47,14 +47,14 @@ public class OpenThinkWebConfigure implements Bootstrap {
 			initialGenerator();
 		} catch (ClassNotFoundException e) {
 		}
-//		initialWebClassDir();
+		//		initialWebClassDir();
 	}
 
-//	private void initialWebClassDir() {
-//		WebContexts.getServletContext().setAttribute(
-//				WebProcesser.WEB_CLASS_DIR,
-//				"R:\\MyGit\\openthinks\\code\\build\\classes\\");
-//
-//	}
+	//	private void initialWebClassDir() {
+	//		WebContexts.getServletContext().setAttribute(
+	//				WebProcesser.WEB_CLASS_DIR,
+	//				"R:\\MyGit\\openthinks\\code\\build\\classes\\");
+	//
+	//	}
 
 }

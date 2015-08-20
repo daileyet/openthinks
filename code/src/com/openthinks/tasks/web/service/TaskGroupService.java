@@ -5,12 +5,12 @@ package com.openthinks.tasks.web.service;
 
 import java.util.List;
 
-import sql.dhibernate.Session;
-import sql.dhibernate.support.SessionFactory;
-import sql.exception.TransactionException;
-import sql.lang.Condition;
-import sql.lang.Configurator;
-import sql.lang.ConfiguratorFactory;
+import openthinks.libs.sql.dhibernate.Session;
+import openthinks.libs.sql.dhibernate.support.SessionFactory;
+import openthinks.libs.sql.exception.TransactionException;
+import openthinks.libs.sql.lang.Condition;
+import openthinks.libs.sql.lang.Configurator;
+import openthinks.libs.sql.lang.ConfiguratorFactory;
 
 import com.openthinks.resource.ResourceManagement;
 import com.openthinks.tasks.web.entity.TaskGroup;
@@ -24,8 +24,7 @@ import com.openthinks.tasks.web.utils.TasksGroupIdGenerator;
  */
 public class TaskGroupService {
 
-	public void addTaskGroup(TaskGroup group, Users users)
-			throws TransactionException {
+	public void addTaskGroup(TaskGroup group, Users users) throws TransactionException {
 		Session session = SessionFactory.getSession();
 		session.beginTransaction();
 		session.disableAutoClose();
@@ -53,17 +52,14 @@ public class TaskGroupService {
 	 */
 	public List<TaskGroup> list(String userId) {
 		Session session = SessionFactory.getSession();
-		List<TaskGroup> taskGroups = session.list(TaskGroup.class, Condition
-				.build(TaskGroup.class).getSqlPart() + " where CreatorID=?",
-				new String[] { userId });
+		List<TaskGroup> taskGroups = session.list(TaskGroup.class, Condition.build(TaskGroup.class).getSqlPart()
+				+ " where CreatorID=?", new String[] { userId });
 
 		return taskGroups;
 	}
 
-	public static void main(String[] args) throws ClassNotFoundException,
-			TransactionException {
-		Configurator configuration = ConfiguratorFactory
-				.getInstance(ResourceManagement.getDbResource());
+	public static void main(String[] args) throws ClassNotFoundException, TransactionException {
+		Configurator configuration = ConfiguratorFactory.getInstance(ResourceManagement.getDbResource());
 		SessionFactory.setDefaultConfigurator(configuration);
 		Class.forName(TasksGroupIdGenerator.class.getName());
 

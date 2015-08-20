@@ -2,15 +2,14 @@ package com.openthinks.tasks.web.utils;
 
 import java.util.Date;
 
-import sql.entity.key.DateFormatUtils;
-import sql.entity.key.IdGenerator;
+import openthinks.easyweb.context.WebContexts;
+import openthinks.libs.sql.entity.key.IdGenerator;
+import openthinks.libs.sql.lang.DateFormatUtils;
 
-import com.openthinks.easyweb.context.WebContexts;
 import com.openthinks.tasks.web.entity.Tasks;
 
 public class TasksIdGenerator extends IdGenerator {
-	private final TaskCounter taskCounter = WebContexts.get().lookup(
-			TaskCounter.class);
+	private final TaskCounter taskCounter = WebContexts.get().lookup(TaskCounter.class);
 	static {
 		IdGenerator.register(Tasks.class, new TasksIdGenerator());
 	}

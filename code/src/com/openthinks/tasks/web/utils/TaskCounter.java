@@ -8,9 +8,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import sql.dhibernate.Session;
-import sql.dhibernate.support.SessionFactory;
-import sql.entity.key.DateFormatUtils;
+import openthinks.libs.sql.dhibernate.Session;
+import openthinks.libs.sql.dhibernate.support.SessionFactory;
+import openthinks.libs.sql.lang.DateFormatUtils;
 
 /**
  * Counter for task, used for generating task id <BR>
@@ -34,9 +34,8 @@ public final class TaskCounter {
 		Session session = SessionFactory.getSession();
 		String datestr = DateFormatUtils.format(new Date(), "yyyyMMdd");
 
-		TempEntity temp = session.get(TempEntity.class,
-				"select max(ID) as taskCount from tasks where ID like '"
-						+ datestr + "%'");
+		TempEntity temp = session.get(TempEntity.class, "select max(ID) as taskCount from tasks where ID like '"
+				+ datestr + "%'");
 		get(datestr).set(temp.getTaskCount_());
 		session.close();
 	}
@@ -75,7 +74,7 @@ public final class TaskCounter {
 			lock.unlock();
 		}
 	}
-	
+
 	private void prepared() {
 		lock.lock();
 		try {

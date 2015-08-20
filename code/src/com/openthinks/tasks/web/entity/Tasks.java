@@ -5,7 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.openthinks.easyweb.context.WebContexts;
+import openthinks.easyweb.context.WebContexts;
+
 import com.openthinks.tasks.web.service.TaskContentService;
 import com.openthinks.tasks.web.service.TaskGroupService;
 import com.openthinks.tasks.web.service.UserService;
@@ -91,8 +92,7 @@ public class Tasks {
 	private Users updatedUser;
 	private TaskGroup taskGroup;
 
-	private final UserService userService = WebContexts.get().lookup(
-			UserService.class);
+	private final UserService userService = WebContexts.get().lookup(UserService.class);
 
 	public Users getUser() {
 		if (this.user == null && this.uid != null) {
@@ -129,8 +129,7 @@ public class Tasks {
 
 	private TaskContents content;
 
-	private final TaskContentService contentService = WebContexts.get().lookup(
-			TaskContentService.class);
+	private final TaskContentService contentService = WebContexts.get().lookup(TaskContentService.class);
 
 	public void setContent(TaskContents content) {
 		this.content = content;
@@ -183,8 +182,7 @@ public class Tasks {
 
 	public TaskGroup getTaskGroup() {
 		if (this.taskGroup == null && this.taskGroupId != null) {
-			this.taskGroup = WebContexts.get().lookup(TaskGroupService.class)
-					.find(this.taskGroupId);
+			this.taskGroup = WebContexts.get().lookup(TaskGroupService.class).find(this.taskGroupId);
 		}
 		return taskGroup;
 	}
@@ -195,9 +193,8 @@ public class Tasks {
 
 	@Override
 	public String toString() {
-		return "Tasks [id=" + id + ", subject=" + subject + ", uid=" + uid
-				+ ", createdate=" + createdate + ", updateby=" + updateby
-				+ ", updatedate=" + updatedate + "]";
+		return "Tasks [id=" + id + ", subject=" + subject + ", uid=" + uid + ", createdate=" + createdate
+				+ ", updateby=" + updateby + ", updatedate=" + updatedate + "]";
 	}
 
 }

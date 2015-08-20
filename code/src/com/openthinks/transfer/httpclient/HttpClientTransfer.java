@@ -46,15 +46,15 @@ public class HttpClientTransfer implements Transfer {
 					new HttpHost(req.getProxyHost(), req.getProxyPort()));
 		}
 		HttpGet gets = new HttpGet(req.getRequestUrl());
-		Map<String,String> requestHeaders = req.getRequestHeaders();
-		for(String key:requestHeaders.keySet()){
+		Map<String, String> requestHeaders = req.getRequestHeaders();
+		for (String key : requestHeaders.keySet()) {
 			gets.addHeader(key, requestHeaders.get(key));
 		}
-		Map<String,String> requestParams = req.getRequestParams();
-		for(String key : requestParams.keySet()){
+		Map<String, String> requestParams = req.getRequestParams();
+		for (String key : requestParams.keySet()) {
 			gets.getParams().setParameter(key, requestParams.get(key));
 		}
-		
+
 		try {
 			HttpResponse response = client.execute(gets);
 			for (Header h : response.getAllHeaders()) {
@@ -69,7 +69,5 @@ public class HttpClientTransfer implements Transfer {
 			e.printStackTrace();
 		}
 	}
-
-		
 
 }

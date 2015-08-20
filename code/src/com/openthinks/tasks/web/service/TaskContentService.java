@@ -1,8 +1,8 @@
 package com.openthinks.tasks.web.service;
 
-import sql.dhibernate.Session;
-import sql.dhibernate.support.SessionFactory;
-import sql.lang.Condition;
+import openthinks.libs.sql.dhibernate.Session;
+import openthinks.libs.sql.dhibernate.support.SessionFactory;
+import openthinks.libs.sql.lang.Condition;
 
 import com.openthinks.tasks.web.entity.TaskContents;
 
@@ -27,9 +27,8 @@ public class TaskContentService {
 
 	public TaskContents findByTask(String task_id) {
 		Session session = SessionFactory.getSession();
-		TaskContents contents = session.get(TaskContents.class, Condition
-				.build(TaskContents.class).getSqlPart() + " where TID=?",
-				new String[] { task_id });
+		TaskContents contents = session.get(TaskContents.class, Condition.build(TaskContents.class).getSqlPart()
+				+ " where TID=?", new String[] { task_id });
 		if (contents == null) {
 			contents = new TaskContents();
 			contents.setTid(task_id);

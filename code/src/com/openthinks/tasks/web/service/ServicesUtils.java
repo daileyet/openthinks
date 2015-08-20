@@ -2,14 +2,13 @@ package com.openthinks.tasks.web.service;
 
 import java.lang.reflect.Field;
 
-import utilities.Checker;
+import openthinks.libs.utilities.Checker;
 
 public class ServicesUtils<T> {
 
 	private T service;
 
-	public T inject(String properties, Object propertiesValue)
-			throws SecurityException, NoSuchFieldException,
+	public T inject(String properties, Object propertiesValue) throws SecurityException, NoSuchFieldException,
 			IllegalArgumentException, IllegalAccessException {
 		Field field = service.getClass().getDeclaredField(properties);
 		Checker.require(field).notNull();

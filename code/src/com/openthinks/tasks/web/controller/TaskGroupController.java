@@ -2,12 +2,12 @@ package com.openthinks.tasks.web.controller;
 
 import java.util.List;
 
+import openthinks.easyweb.annotation.Controller;
+import openthinks.easyweb.annotation.Mapping;
+import openthinks.easyweb.context.WebContexts;
+import openthinks.easyweb.context.handler.WebAttributers;
+import openthinks.easyweb.context.handler.WebAttributers.WebScope;
 
-import com.openthinks.easyweb.annotation.Controller;
-import com.openthinks.easyweb.annotation.Mapping;
-import com.openthinks.easyweb.context.WebContexts;
-import com.openthinks.easyweb.context.handler.WebAttributers;
-import com.openthinks.easyweb.context.handler.WebAttributers.WebScope;
 import com.openthinks.tasks.web.entity.TaskGroup;
 import com.openthinks.tasks.web.entity.Users;
 import com.openthinks.tasks.web.service.TaskGroupService;
@@ -16,8 +16,7 @@ import com.openthinks.tasks.web.utils.TaskUtils;
 @Controller("/task/group")
 public class TaskGroupController {
 
-	TaskGroupService taskGroupService = WebContexts.get().lookup(
-			TaskGroupService.class);
+	TaskGroupService taskGroupService = WebContexts.get().lookup(TaskGroupService.class);
 
 	@Mapping("/list")
 	public String listGroup(WebAttributers webAttribute) {

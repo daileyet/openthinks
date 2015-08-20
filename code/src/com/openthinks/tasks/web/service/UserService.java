@@ -5,9 +5,9 @@ package com.openthinks.tasks.web.service;
 
 import java.util.List;
 
-import sql.dhibernate.Session;
-import sql.dhibernate.support.SessionFactory;
-import sql.lang.Condition;
+import openthinks.libs.sql.dhibernate.Session;
+import openthinks.libs.sql.dhibernate.support.SessionFactory;
+import openthinks.libs.sql.lang.Condition;
 
 import com.openthinks.tasks.web.entity.Users;
 
@@ -16,7 +16,6 @@ import com.openthinks.tasks.web.entity.Users;
  * 
  */
 public class UserService {
-
 
 	public void add(Users user) {
 		Session session = SessionFactory.getSession();
@@ -42,9 +41,8 @@ public class UserService {
 
 	public Users find(String userName, String userPassword) {
 		Session session = SessionFactory.getSession();
-		Users user = session.get(Users.class, Condition.build(Users.class)
-				.getSqlPart() + " where UserName=? and UserPassword=?",
-				new String[] { userName, userPassword });
+		Users user = session.get(Users.class, Condition.build(Users.class).getSqlPart()
+				+ " where UserName=? and UserPassword=?", new String[] { userName, userPassword });
 		return user;
 	}
 }
