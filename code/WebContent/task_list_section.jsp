@@ -9,10 +9,10 @@
       <h4 class="panel-title">
     	
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse_${task.id}">
-          <span name="action-expand" class="icon-expand"></span>
+          <span name="action-expand" class="icon-expand fa fa-caret-square-o-right"></span>
         </a>
-    <c:if test="${task.lock=='Y'}"><span class="icon-lock"></span></c:if>
-    <c:if test="${task.lock=='N'}"><span class="icon-unlock"></span></c:if>
+    <c:if test="${task.lock=='Y'}"><span class="icon-lock fa fa-lock"></span></c:if>
+    <c:if test="${task.lock=='N'}"><span class="icon-unlock fa fa-unlock"></span></c:if>
     &nbsp;&nbsp;<a name="action-edit" href="javascript:tasks.editTask('${task.id}')" style="width:auto;float:right;"><span name="task-subject">${task.subject}</span></a>
     
       </h4>

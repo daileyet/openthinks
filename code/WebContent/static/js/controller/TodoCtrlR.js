@@ -15,7 +15,7 @@
 		switchSelector : "ul[class~='nav'] a",
 		internalCommand : {
 			role : 'role',
-			enable : true
+			enable : false
 		},
 		externalCommand : {
 			role : 'role-customer',
@@ -39,9 +39,9 @@
 			// console.debug($(this).data(plugin.editor.defaults.externalCommandRole));
 			var processResp = function(data) {
 				if (data.type == "ERROR") {
-//					$.sticky('[' + data.type + ']' + data.msg);
+					$.sticky('[' + data.type + ']' + data.msg);
 				} else if (data.type == "SUCESS") {
-//					$.sticky('[' + data.type + ']');
+					$.sticky('[' + data.type + ']');
 					plugin.updateEditorModel(data.other);
 				} else {
 				}

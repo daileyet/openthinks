@@ -10,8 +10,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="en:locale" content="en" />
 <meta name="gwt:property" content="locale=en" />
-<link rel="shortcut icon"
-	href="${pageContext.request.contextPath}/static/image/favicon.ico" />
 <title>Setting</title>
 <jsp:include page="static/page/common-head.jsp" />
 <script>
