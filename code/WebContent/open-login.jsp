@@ -9,15 +9,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <title>Welcome Back</title>
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-<link
-	href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
-	rel="stylesheet">
-<link rel="shortcut icon" href="static/image/favicon.ico" />
-<link rel="stylesheet" href="static/css/openthinks.common.css" />
+<jsp:include page="static/page/common-head.jsp" />
 </head>
 <body>
 	<input type="hidden" name="APP_BASE_PATH" id="APP_BASE_PATH"

@@ -12,19 +12,10 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>My To Do</title>
+<%-- <%@ include file="static/page/common-head.jsp"%> --%>
 <jsp:include page="static/page/common-head.jsp" />
-<!-- Bootstrap -->
-<!-- 
 <link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-<link
-	href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
-	rel="stylesheet">
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/static/css/openthinks.common.css">
--->
+	href="${pageContext.request.contextPath}/static/js/plugin/sticky/sticky.full.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/openthinks.task.main.css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -47,14 +38,14 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"> Open-thinks <span class="label"><small>To
+			<a class="navbar-brand" href="#"> Openthinks <span class="label"><small>To
 						Do</small></span>
 			</a>
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown"> <i class="icon-user"></i><b
+					data-toggle="dropdown"> <i class="icon-user fa fa-user"></i><b
 						class="caret"></b><span class="label">&nbsp;</span>
 				</a>
 					<ul class="dropdown-menu" role="menu">
@@ -84,22 +75,22 @@
 								<button type="button" class="accordion-toggle btn btn-default"
 									data-toggle="collapse" data-parent="#accordion"
 									href="[id^='collapse_']">
-									<span class="icon-expand"></span>
+									<span class="icon-expand fa fa-caret-square-o-right"></span>
 								</button>
 								<button type="button" class="btn btn-default">
-									<i class="icon-refresh"></i>
+									<i class="icon-refresh fa fa-refresh"></i>
 								</button>
 								<button type="button" class="btn btn-default">
-									<i class="icon-plus"></i>
+									<i class="icon-plus fa fa-plus"></i>
 								</button>
 							</div>
 
 							<div class="btn-group pull-right">
 								<button type="button" class="btn btn-default">
-									<i class="icon-chevron-left"></i>
+									<i class="icon-chevron-left fa fa-chevron-left"></i>
 								</button>
 								<button type="button" class="btn btn-default">
-									<i class="icon-chevron-right"></i>
+									<i class="icon-chevron-right fa fa-chevron-right"></i>
 								</button>
 							</div>
 							<div class="clearfix"></div>
@@ -114,8 +105,10 @@
 											<span class="pull-left"> <a class="accordion-toggle"
 												data-toggle="collapse" data-parent="#accordion"
 												href="#collapse_${task.id}"> <span name="action-expand"
-													class="icon-expand"></span>
-											</a> <span class="icon-lock"></span> <span class="icon-unlock"></span>
+													class="icon-expand fa fa-caret-square-o-right"></span>
+											</a> 
+											 <c:if test="${task.lock=='Y'}"><span class="icon-lock fa fa-lock"></span></c:if>
+    										<c:if test="${task.lock=='N'}"><span class="icon-unlock fa fa-unlock"></span></c:if>
 											</span> <a name="action-edit" href="${pageContext.request.contextPath}/task/edit.htm?id=${task.id}" class="pull-right"><span
 												name="task-subject">${task.subject}</span></a> <span
 												class="clearfix"></span>
@@ -142,17 +135,17 @@
 						data-role="editor-toolbar">
 						<div class="btn-group">
 							<a class="btn btn-default" data-role-customer="save" href="#">
-								<i class="icon-save"></i>
+								<i class="icon-save fa fa-save"></i>
 							</a> <a class="btn btn-default" data-role-customer="delete" href="#">
-								<i class="icon-remove"></i>
+								<i class="icon-remove fa fa-remove"></i>
 							</a>
 
 						</div>
 						<div class="btn-group">
 							<a class="btn btn-default" data-role="undo" href="#"> <i
-								class="icon-undo"></i>
+								class="icon-undo fa fa-undo"></i>
 							</a> <a class="btn btn-default" data-role="redo" href="#"> <i
-								class="icon-repeat"></i>
+								class="icon-repeat fa fa-repeat"></i>
 							</a>
 						</div>
 						<div class="btn-group">
@@ -165,33 +158,33 @@
 						</div>
 						<div class="btn-group">
 							<a class="btn btn-default" data-role="justifyLeft" href="#">
-								<i class="icon-align-left"></i>
+								<i class="icon-align-left fa fa-align-left"></i>
 							</a> <a class="btn btn-default" data-role="justifyCenter" href="#">
-								<i class="icon-align-center"></i>
+								<i class="icon-align-center fa fa-align-center"></i>
 							</a> <a class="btn btn-default" data-role="justifyRight" href="#">
-								<i class="icon-align-right"></i>
+								<i class="icon-align-right fa fa-align-right"></i>
 							</a> <a class="btn btn-default" data-role="justifyFull" href="#">
-								<i class="icon-align-justify"></i>
+								<i class="icon-align-justify fa fa-align-justify"></i>
 							</a>
 						</div>
 						<div class="btn-group">
 							<a class="btn btn-default" data-role="indent" href="#"> <i
-								class="icon-indent-right"></i>
+								class="icon-indent-right fa fa-indent"></i>
 							</a> <a class="btn btn-default" data-role="outdent" href="#"> <i
-								class="icon-indent-left"></i>
+								class="icon-indent-left fa fa-outdent"></i>
 							</a>
 						</div>
 						<div class="btn-group">
 							<a class="btn btn-default" data-role1="insertunorderedlist"
-								href="#"> <i class="icon-list-ul"></i>
+								href="#"> <i class="icon-list-ul fa fa-list-ul"></i>
 							</a> <a class="btn btn-default" data-role1="insertorderedlist"
-								href="#"> <i class="icon-list-ol"></i>
+								href="#"> <i class="icon-list-ol fa fa-list-ol"></i>
 							</a>
 						</div>
 						<div class="btn-group">
 						
 						<a class="btn btn-default" data-role="removeFormat" href="#" title="Clean">
-								<i class="icon-eraser"></i>
+								<i class="icon-eraser fa fa-eraser"></i>
 							</a>
 							<a class="btn btn-default" data-role="formatBlock h1" href="#">
 								h<sup>1</sup>
@@ -202,20 +195,20 @@
 						</div>
 						<div class="btn-group">
 							<a class="btn btn-default" data-role="subscript" href="#"> <i
-								class="icon-subscript"></i>
+								class="icon-subscript fa fa-subscript"></i>
 							</a> <a class="btn btn-default" data-role="superscript" href="#">
-								<i class="icon-superscript"></i>
+								<i class="icon-superscript fa fa-superscript"></i>
 							</a>
 						</div>
 
 						<div class="btn-group">
 							<a class="btn btn-default" data-role-customer="assignGroup"
 								data-toggle="modal" data-target="#myModal"> <i
-								class="icon-group"></i>
+								class="icon-group fa fa-group"></i>
 							</a> <a class="btn btn-default" data-role-customer="unlock" href="#">
-								<i class="icon-unlock"></i>
+								<i class="icon-unlock fa fa-unlock"></i>
 							</a> <a class="btn btn-default" data-role-customer="lock" href="#">
-								<i class="icon-lock"></i>
+								<i class="icon-lock fa fa-lock"></i>
 							</a>
 						</div>
 
@@ -298,13 +291,16 @@
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script
-		src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		src="${pageContext.request.contextPath}/static/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/static/js/plugin/jquery.hotkeys.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/static/js/plugin/bootstrap-wysiwyg.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/static/js/plugin/DataBind.js"></script>
+		
+	<script
+		src="${pageContext.request.contextPath}/static/js/plugin/sticky/sticky.full.js"></script>
 	<script>
 		//constant and model objects
 		

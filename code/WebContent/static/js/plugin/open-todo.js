@@ -57,7 +57,7 @@ TODO_PLUGIN.prototype.setUp=function(){
 				+ dfs.externalCommand.role
 				+ '],input[type=button][data-'
 				+ dfs.externalCommand.role + ']';
-		if (dfs.internalCommand.enable) {
+		if (dfs.internalCommand.enable) {//directly use HTM5 document.execCommand(command, 0, args);
 			dfs.$toolbar.find(toolbarBtnSelector).click(function() {
 				plugin.editor.handler($(this).data(dfs.internalCommand.role));
 			});
