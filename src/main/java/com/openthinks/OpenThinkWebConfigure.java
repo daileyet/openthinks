@@ -7,6 +7,7 @@ import com.openthinks.easyweb.context.Bootstrap;
 import com.openthinks.libs.sql.dhibernate.support.SessionFactory;
 import com.openthinks.libs.sql.lang.Configurator;
 import com.openthinks.libs.sql.lang.ConfiguratorFactory;
+import com.openthinks.libs.utilities.logger.ProcessLogger;
 import com.openthinks.resource.ResourceManagement;
 import com.openthinks.tasks.web.utils.TasksGroupIdGenerator;
 import com.openthinks.tasks.web.utils.TasksIdGenerator;
@@ -40,10 +41,17 @@ public class OpenThinkWebConfigure implements Bootstrap {
 
 	@Override
 	public void initial() {
-		initialSessionFactory();
+		try {
+			initialSessionFactory();
+		} catch (Exception e) {
+			e.printStackTrace();
+			ProcessLogger.error("Initial SQL Session Factory:" + e.getMessage());
+		}
 		try {
 			initialGenerator();
 		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			ProcessLogger.error("Initial Generator:" + e.getMessage());
 		}
 		//		initialWebClassDir();
 	}

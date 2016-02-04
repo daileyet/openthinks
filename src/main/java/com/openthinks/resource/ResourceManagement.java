@@ -5,6 +5,7 @@ package com.openthinks.resource;
 
 import java.io.InputStream;
 
+import com.openthinks.libs.utilities.Checker;
 
 /**
  * @author minjdai
@@ -17,11 +18,16 @@ public class ResourceManagement {
 	}
 
 	public static InputStream getDbResource() {
-		return getResource("dbconfig.properties");
+		InputStream config = getResource("dbconfig.properties");
+		config = (config == null) ? getResource("/dbconfig.properties") : config;
+		Checker.require(config).notNull("DB configure file not found.");
+		return config;
 	}
 
 	public static InputStream getLogResource() {
-		return getResource("log4j.properties");
+		InputStream config = getResource("log4j.properties");
+		config = (config == null) ? getResource("/log4j.properties") : config;
+		Checker.require(config).notNull("Log configure file not found.");
+		return config;
 	}
-
 }
