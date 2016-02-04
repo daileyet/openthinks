@@ -1,0 +1,24 @@
+html,body{
+	margin:0;
+}
+  
+  #setting-main{
+  width:100%;
+  
+  }
+  
+  #setting-main #setting-left{
+  	width:20%;height:100%;float:left;
+  }
+  
+   #setting-main #setting-left ul{
+  	
+  }
+  
+ 
+  
+  
+  #setting-main #setting-right{
+	width:79.7%;height:100%;float:right;	
+  }
+  
