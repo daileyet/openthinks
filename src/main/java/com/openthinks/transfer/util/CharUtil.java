@@ -5,7 +5,7 @@ import java.net.URLEncoder;
 import java.util.regex.Pattern;
 
 /**
- * 字符通用工具类
+ * 锟街凤拷通锟矫癸拷锟斤拷锟斤拷
  * 
  */
 public class CharUtil {
@@ -15,7 +15,7 @@ public class CharUtil {
 	 * @throws UnsupportedEncodingException
 	 */
 	public static void main(String[] args) throws UnsupportedEncodingException {
-		String s = "http://apistore.baidu.com/microservice/cityinfo?cityname=南京";
+		String s = "http://apistore.baidu.com/microservice/cityinfo?cityname=锟较撅拷";
 		System.out.println();
 		System.out.println(CharUtil.escapeChinese(s));
 
@@ -27,8 +27,7 @@ public class CharUtil {
 	 * @return
 	 * @throws UnsupportedEncodingException
 	 */
-	public static String escapeChinese(String url)
-			throws UnsupportedEncodingException {
+	public static String escapeChinese(String url) throws UnsupportedEncodingException {
 		char[] ch = url.toCharArray();
 		String urlEscape = new String(url);
 		for (int i = 0; i < ch.length; i++) {
@@ -44,7 +43,6 @@ public class CharUtil {
 		return urlEscape;
 	}
 
-	// 根据Unicode编码完美的判断中文汉字和符号
 	private static boolean isChinese(char c) {
 		Character.UnicodeBlock ub = Character.UnicodeBlock.of(c);
 		if (ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS
@@ -59,7 +57,6 @@ public class CharUtil {
 		return false;
 	}
 
-	// 完整的判断中文汉字和符号
 	public static boolean isChinese(String strName) {
 		char[] ch = strName.toCharArray();
 		for (int i = 0; i < ch.length; i++) {
@@ -71,7 +68,6 @@ public class CharUtil {
 		return false;
 	}
 
-	// 只能判断部分CJK字符（CJK统一汉字）
 	public static boolean isChineseByREG(String str) {
 		if (str == null) {
 			return false;
@@ -80,13 +76,10 @@ public class CharUtil {
 		return pattern.matcher(str.trim()).find();
 	}
 
-	// 只能判断部分CJK字符（CJK统一汉字）
 	public static boolean isChineseByName(String str) {
 		if (str == null) {
 			return false;
 		}
-		// 大小写不同：\\p 表示包含，\\P 表示不包含
-		// \\p{Cn} 的意思为 Unicode 中未被定义字符的编码，\\P{Cn} 就表示 Unicode中已经被定义字符的编码
 		String reg = "\\p{InCJK Unified Ideographs}&&\\P{Cn}";
 		Pattern pattern = Pattern.compile(reg);
 		return pattern.matcher(str.trim()).find();

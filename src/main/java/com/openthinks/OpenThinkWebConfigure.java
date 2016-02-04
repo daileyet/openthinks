@@ -26,8 +26,8 @@ public class OpenThinkWebConfigure implements Bootstrap {
 	private void useSaeEnv(Configurator configuration) {
 		//		configuration
 		//				.setUrl("jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_openthinks?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=gbk");
-		//		String accessKey = SaeUserInfo.getAccessKey();// "m34k5553x4"
-		//		String secretKey = SaeUserInfo.getSecretKey();// hmi1x23i141lji5kmxm5yy5w15345zxw152zk30h
+		//		String accessKey = SaeUserInfo.getAccessKey();// 
+		//		String secretKey = SaeUserInfo.getSecretKey();//  
 
 		//		configuration.setUserName(accessKey);
 		//		configuration.setUserPwd(secretKey);
