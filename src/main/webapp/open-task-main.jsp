@@ -49,10 +49,10 @@
 						class="caret"></b><span class="label">&nbsp;</span>
 				</a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#"> Setting </a></li>
+						<li><a href="${pageContext.request.contextPath }/setting/index.htm"> Setting </a></li>
 						<li><a href="#"> Administrator </a></li>
 						<li class="divider"></li>
-						<li><a href="#"> Logout </a></li>
+						<li><a href="${pageContext.request.contextPath }/logout.htm"> Logout </a></li>
 					</ul></li>
 			</ul>
 		</div>

@@ -51,9 +51,9 @@ public class AuthorizeFilter implements Filter {
 
 		// ///////////////////////////////////////
 		Users users = new Users();
-		users.setId("1");
-		users.setUserName("dailey");
-		users.setUserPassword("1234");
+		//users.setId("1");
+		//.setUserName("dailey");
+		//users.setUserPassword("1234");
 
 		// users.setId("2");
 		// users.setUserName("jack");
