@@ -1,5 +1,10 @@
 package com.openthinks;
 
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Enumeration;
+
 import com.openthinks.easyweb.annotation.configure.EasyConfigure;
 import com.openthinks.easyweb.annotation.configure.RequestSuffixs;
 import com.openthinks.easyweb.annotation.configure.ScanPackages;
@@ -54,6 +59,21 @@ public class OpenThinkWebConfigure implements Bootstrap {
 			ProcessLogger.error("Initial Generator:" + e.getMessage());
 		}
 		//		initialWebClassDir();
+	}
+
+	@Override
+	public void cleanUp() {
+		Enumeration<Driver> drivers = DriverManager.getDrivers();
+		while (drivers.hasMoreElements()) {
+			Driver driver = drivers.nextElement();
+			try {
+				DriverManager.deregisterDriver(driver);
+				ProcessLogger.info(String.format("deregistering jdbc driver: %s", driver));
+			} catch (SQLException e) {
+				ProcessLogger.error(String.format("Error deregistering driver %s", driver));
+			}
+
+		}
 	}
 
 	//	private void initialWebClassDir() {

@@ -20,7 +20,7 @@
 <link rel="shortcut icon"
 	href="${pageContext.request.contextPath}/static/image/favicon.ico" />
 <title>Openthinks-Tasks</title>
-<jsp:include page="static/page/common-head.jsp" />
+<jsp:include page="${pageContext.request.contextPath}/static/page/common-head.jsp" />
 </head>
 <body class="" style="min-height: 660px;">
 
@@ -28,7 +28,7 @@
 		<c:redirect url="/login.jsp"></c:redirect>
 	</c:if>
 
-	<jsp:include page="static/page/common-menu.jsp">
+	<jsp:include page="${pageContext.request.contextPath}static/page/common-menu.jsp">
 		<jsp:param name="menuActive" value="1" />
 	</jsp:include>
 		<div id="main-container" class="row" >
@@ -41,7 +41,7 @@
 					src="${pageContext.request.contextPath}/task/edit.htm"></iframe>
 			</div>
 		</div>
-	<jsp:include page="static/page/common-footer.jsp" />
+	<jsp:include page="${pageContext.request.contextPath}static/page/common-footer.jsp" />
 
 	<script>
 	/*
