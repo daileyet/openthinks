@@ -20,25 +20,27 @@
  <jsp:include page="static/page/common-menu.jsp">
 	<jsp:param name="menuActive" value="1"/>
  </jsp:include>
-<div id="setting-main" class="">
-
-	<div id="setting-left">
-	<ul class="nav nav-pills nav-stacked">
-	  <li ><a href="#profile" data-toggle="tab" >Profile</a></li>
-	  <li class="active"><a href="#taskgroup" data-toggle="tab" data-url="${pageContext.request.contextPath }/task/group/setting/list.htm">Task Group</a></li>
-	</ul>
-	</div>
-	
-	<div id="setting-right">
-		<div class="tab-content">
-		  <div class="tab-pane fade" id="profile">This is Profile setting panel, will coming soon...</div>
-		  <div class="tab-pane fade in active" id="taskgroup" >
-		  	 <jsp:include page="task_group.jsp">
-		  	 	<jsp:param value="${mygroups }" name="mygroups"/>
-		  	 </jsp:include>
-		  </div>
+<div id="setting-main" class="container-fluid">
+	<div class="row-fluid">
+		<div id="setting-left">
+		<ul class="nav nav-pills nav-stacked">
+		  <li ><a href="#profile" data-toggle="tab" >Profile</a></li>
+		  <li class="active"><a href="#taskgroup" data-toggle="tab" data-url="${pageContext.request.contextPath }/task/group/setting/list.htm">Task Group</a></li>
+		</ul>
+		</div>
+		
+		<div id="setting-right">
+			<div class="tab-content">
+			  <div class="tab-pane fade" id="profile">This is Profile setting panel, will coming soon...</div>
+			  <div class="tab-pane fade in active" id="taskgroup" >
+			  	 <jsp:include page="task_group.jsp">
+			  	 	<jsp:param value="${mygroups }" name="mygroups"/>
+			  	 </jsp:include>
+			  </div>
+			</div>
 		</div>
 	</div>
+	
 </div>
 <jsp:include page="static/page/common-footer.jsp" />
 <script>
@@ -48,7 +50,5 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 });
 
 </script>
-
 </body>
-
 </html>

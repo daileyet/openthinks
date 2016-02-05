@@ -3,12 +3,12 @@ html,body{
 }
   
   #setting-main{
-  width:100%;
-  
+  	width:100%;
+  	padding-top:15px;
   }
   
   #setting-main #setting-left{
-  	width:20%;height:100%;float:left;
+  	width:20%;height:auto;float:left;
   }
   
    #setting-main #setting-left ul{
@@ -19,6 +19,6 @@ html,body{
   
   
   #setting-main #setting-right{
-	width:79.7%;height:100%;float:right;	
+	width:79.7%;height:auto;float:right;	
   }
   

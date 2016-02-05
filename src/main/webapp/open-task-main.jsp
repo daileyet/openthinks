@@ -246,7 +246,7 @@
 
 	<div id="footer">
 		<div class="container">
-			<p class="text-muted">&copy; open-thinks 2013~2014</p>
+			<p class="text-muted">&copy; open-thinks 2013~2016</p>
 		</div>
 	</div>
 
