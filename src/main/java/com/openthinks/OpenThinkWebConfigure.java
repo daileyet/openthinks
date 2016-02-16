@@ -1,4 +1,4 @@
-package com.openthinks.notes;
+package com.openthinks;
 
 import java.sql.Driver;
 import java.sql.DriverManager;
@@ -18,7 +18,7 @@ import com.openthinks.notes.web.utils.TasksGroupIdGenerator;
 import com.openthinks.notes.web.utils.TasksIdGenerator;
 
 @EasyConfigure
-@ScanPackages({ "com.openthinks.tasks.web", "com.openthinks.transfer.web" })
+@ScanPackages({ "com.openthinks.notes.web", "com.openthinks.transfer.web" })
 @RequestSuffixs(".do,.htm,.html")
 public class OpenThinkWebConfigure implements Bootstrap {
 

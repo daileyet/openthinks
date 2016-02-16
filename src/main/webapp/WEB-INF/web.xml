@@ -40,10 +40,10 @@
   </context-param>
   <filter>
     <filter-name>Authorize</filter-name>
-    <filter-class>com.openthinks.tasks.web.filter.AuthorizeFilter</filter-class>
+    <filter-class>com.openthinks.notes.web.filter.AuthorizeFilter</filter-class>
     <init-param>
       <param-name>exclude</param-name>
-      <param-value>register.,login.,/index.,/static/,img.,/transfer/</param-value>
+      <param-value>register.,login.,login_page.,/index.,/static/,img.,/transfer/</param-value>
     </init-param>
   </filter>
   <filter-mapping>
